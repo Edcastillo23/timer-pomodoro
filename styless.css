@@ -1,0 +1,39 @@
+/* resetea los margenes por defecto */
+*{
+    padding: 0;
+    margin:0;   
+    box-sizing: border-box;
+}
+
+body{
+    background: rgb(255,112,175);
+    background: radial-gradient(circle, rgba(255,112,175,0.5776435574229692) 0%, rgba(103,167,242,1) 100%);
+}
+
+h1, h2{
+    color:rgb(27, 32, 22);
+    text-align:center;
+}
+
+.clock{
+    border-radius: 12px 12px;
+    border:0.5px solid black;
+    height: 300px;
+    margin: 60px 80px;
+    background: rgb(129,58,180);
+    background: linear-gradient(90deg, rgba(129,58,180,0.4543942577030813) 0%, rgba(156,101,239,1) 100%);
+}
+.minseg{
+    font-size: 180px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: black;
+    margin-left: 250px;
+    margin-bottom: 10px;    
+}
+.boton{
+    height: 25px;
+    width: 82px;
+    padding: 2px 5px 2px 5px;
+    text-align: center;
+    margin-left: 15px;
+}
