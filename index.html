@@ -9,23 +9,39 @@
     <title>POMODORO</title>
 </head>
 <body>
-    <h1>Inicia el timer</h1>
-    <h2>y entra en estado fluido</h2>
-    <div class="marco">
+  <div class="container">   
+        <h1>Inicia el timer</h1>
+        <h2>y entra en estado fluido</h2>
+     
         <div class="personalizarTimer">
             <h2>Personaliza tu Timer 👇</h2>
-            <label for="concentracion">Momento de concentración: <input id="concentracion" name="momento1" type="number" required placeholder="Ej: 25 minutos" /></label>
-            <label for="descansocorto">Momento de descanso corto: <input id="descansocorto" name="momento2" type="number" required placeholder="Ej: 5 minutos" /></label>
-            <label for="descansoLargo">Momento de descanso largo: <input id="descansoLargo" name="momento3" type="number" required placeholder="Ej: 15 minutos" /></label>
-            <label for="ciclos">Ciclos de POMODORO: <input id="ciclos" name="ciclosPomodoro" type="number"  required placeholder="Te recomendamos 4 ciclos" /></label>
+            <label for="concentracion">Momento de concentración: </label> 
+            <br>
+            <input id="concentracion" name="momento1" type="number" required placeholder="Ej: 25 minutos" />
+            
+            <br>
+            <label for="descansocorto">Momento de descanso corto: </label>
+            <br>
+            <input id="descansocorto" name="momento2" type="number" required placeholder="Ej: 5 minutos" />            
+            <br>
+            <label for="descansoLargo">Momento de descanso largo: </label> 
+            <br>
+            <input id="descansoLargo" name="momento3" type="number" required placeholder="Ej: 15 minutos" />            
+            <br>
+            <label for="ciclos">Ciclos de POMODORO:</label>
+            <br>
+            <input id="ciclos" name="ciclosPomodoro" type="number"  required placeholder="Te recomendamos 4 ciclos" />            
+            <br>
             <button id="start">Ya puedes iniciar tu Timer 😊.</button>
           </div>
-        <div class="clock">
-            <p class="minseg">00:00:00</p>
-            <button class="comand">Iniciar</button>
-            <button class="comand">Pausar</button>
-            <button class="comand">Reiniciar</button>            
-        </div>
+          <br>
+          <div class="reloj">            
+             <p class="minseg">00:00:00</p>
+             <br>            
+                <button class="comand">Iniciar</button>
+                <button class="comand">Pausar</button>
+                <button class="comand">Reiniciar</button>          
+         </div>
         <div class="citas">
             <h2>Cita del día</h2>
             <blockquote cite="Fuente">“<em >Cualquier cosa </em>que puede <em>concebir</em> y creer la mente de un hombre, se puede <em>conseguir</em>” <span>Napoleón Hill</span>.</blockquote>
@@ -34,9 +50,11 @@
             <h2>POMODORO</h2>
             <p>En esta seccion pondré por qué es efectivo el metodo POMODORO y otro consejos</p>
         </div>
-    </div>
+        
+  </div>     
+    
     <script src="main.js"></script>
-    <footer>Creado por <a target="_blank" href="https://github.com/Edcastillo23">Edinson Castillo</a>
-    </footer>
+    <footer class="foot">Creado por <a target="_blank" href="https://github.com/Edcastillo23">Edinson Castillo</a>
+        </footer>
 </body>
 </html>
