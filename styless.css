@@ -1,10 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
 /* resetea los margenes por defecto */
 *{
     margin: 0;
     padding: 0;
     color:white;
+    box-sizing: border-box;
 }
-
 h1, h2{
     justify-content:center;
     text-align: center;
@@ -13,29 +18,33 @@ h1, h2{
 }
 .container{
     display: flex;    
-    justify-content: space-around;
+    gap: 50px;
     height: 1000px;
-    width: 100%;
-    flex-flow: column;
+    width: 100%;    
     margin-top: 40px;
+    justify-content: center;
 }
 .personalizarTimer{
-    height: 300px;
-    width: 300px;
+    height: 400px;
+    width: 320px;
     padding: 15px;
-    margin:42px 5px 5px 30px;
     border: 0.5px solid black;
     border-radius: 15px;
     background-color: black;
 }
+.personalizarTimer label{
+    margin: 5px;
+    padding:5px;    
+}
+.personalizarTimer input{
+    color: black;
+}
 .reloj{
-    height:200px;
-    width: 400px;
-    padding: 10px ;
-    margin:5px 5px 5px 5px ;
-    align-self: center;  
     position: relative;
-    bottom: 290px; 
+    right: 23px;
+    height:200px;
+    width: 450px;
+    padding: 15px ;    
     border: 0.5px solid black;
     border-radius: 15px; 
     background-color: black;
@@ -45,37 +54,36 @@ h1, h2{
     text-align: center;
     font-weight: 180px; 
 }
-
-.comando1, .comando2, .comando3 {
+.botones{
+    display: flex;
+    gap: 20px;
     position: relative;
-    left:90PX;
+    left:75PX;
+}
+.botones:hover {
+   cursor: pointer;
+}
+.comando1, .comando2, .comando3 {   
     text-align: center;  
     font-size: 15px;    
     height: 45px;
     width: 75px;   
     font: 0.9em sans-serif;
-    color: black;
-    border-radius: 8px ;
-    
+    color: white;
+    background-color: black;
+    border-radius: 8px; 
+    font-family: 'Poppins', sans-serif; 
+    border: 1px solid white;  
 }
-
 .citas{
     height: 180px;
     width: 250px;
-    padding: 40px ;
-    margin:12px 30px 5px 5px;
-    align-self: flex-end;
-    align-content: space-around;
-    position: relative;
-    bottom: 500px;   
+    padding: 15px ;    
     border: 0.5px solid black;
     border-radius: 15px;
     background-color: black;
 }
-.informacion{
-    position: relative;
-    bottom: 380px;
-    left: 350px;
+.informacion{   
     height: 220px;
     width: 500px;
     padding: 10px;
@@ -103,9 +111,6 @@ footer{
     margin-top: 5px;    
     margin-bottom: 5px;
 }
-.personalizarTimer label{
-    margin: 55px;
-    padding:5px;    
-}
+
 
 
