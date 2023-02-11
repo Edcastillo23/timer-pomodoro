@@ -10,16 +10,25 @@ body{
     color:white;
     box-sizing: border-box;
 }
-h1, h2{
+h1{
     justify-content:center;
     text-align: center;
     padding-top: 5px;
-    background-color: black;
+    color: orange;
+   
+}
+h2{
+    justify-content:center;
+    text-align: center;
+    padding-top: 5px;
+    background: rgb(251,113,63);
+    background: radial-gradient(circle, rgba(251,113,63,1) 0%, rgba(227,67,4,0.8465511204481793) 0%);
+    border: 0.5px solid rgb(233,89,5);
+    border-radius: 5px;
 }
 .container{
     display: flex;    
     gap: 50px;
-    height: 1000px;
     width: 100%;    
     margin-top: 40px;
     justify-content: center;
@@ -28,26 +37,30 @@ h1, h2{
     height: 400px;
     width: 320px;
     padding: 15px;
-    border: 0.5px solid black;
+    border: 0.5px solid rgb(233,89,5);
     border-radius: 15px;
-    background-color: black;
+    background: rgb(251,113,63);
+    background: radial-gradient(circle, rgba(251,113,63,1) 0%, rgba(227,67,4,0.8465511204481793) 0%);
 }
 .personalizarTimer label{
     margin: 5px;
     padding:5px;    
 }
 .personalizarTimer input{
-    color: black;
+    border: 0.5px solid rgb(233,89,5);
+    border-radius: 5px;
 }
 .reloj{
     position: relative;
     right: 23px;
-    height:200px;
+    height:250px;
     width: 450px;
-    padding: 15px ;    
-    border: 0.5px solid black;
+    padding: 15px;
+    margin: auto;    
+    border: 0.5px solid rgb(233,89,5);
     border-radius: 15px; 
-    background-color: black;
+    background: rgb(251,113,63);
+    background: radial-gradient(circle, rgba(251,113,63,1) 0%, rgba(227,67,4,0.8465511204481793) 0%);
 }
 .reloj p{
     font-size: 80px;
@@ -60,8 +73,9 @@ h1, h2{
     position: relative;
     left:75PX;
 }
-.botones:hover {
+.comando1, .comando2, .comando3:hover {
    cursor: pointer;
+   
 }
 .comando1, .comando2, .comando3 {   
     text-align: center;  
@@ -70,39 +84,56 @@ h1, h2{
     width: 75px;   
     font: 0.9em sans-serif;
     color: white;
-    background-color: black;
+    background: rgb(251,113,63);
+    background: radial-gradient(circle, rgba(251,113,63,1) 0%, rgba(227,67,4,0.8465511204481793) 0%);
     border-radius: 8px; 
     font-family: 'Poppins', sans-serif; 
-    border: 1px solid white;  
+    border: 1px solid rgb(233,89,5);; 
+    box-shadow: 2px 2px 2px  rgb(233,89,5); 
 }
 .citas{
-    height: 180px;
+    height: 190px;
     width: 250px;
     padding: 15px ;    
-    border: 0.5px solid black;
+    border: 0.5px solid rgb(233,89,5);
     border-radius: 15px;
-    background-color: black;
+    background: rgb(251,113,63);
+    background: radial-gradient(circle, rgba(251,113,63,1) 0%, rgba(227,67,4,0.8465511204481793) 0%);
+    text-align: center;
+}
+.autor{
+    padding-top: 5px;
+    padding-bottom: 10px;
 }
 .informacion{   
-    height: 220px;
-    width: 500px;
-    padding: 10px;
-    border: 0.5px solid black;
-    border-radius: 15px;
+    width: 420px;
+    padding-top: 25px;
+    padding-left: 5px;
+    border: 0.5px solid rgb(233,89,5);
+    border-radius: 5px;
 }
-.informacion p{
+h3{
+    justify-content: center;
     color: white;
-    background-color: black;
-    padding-top: 15px;
+    background: rgb(251,113,63);
+    background: radial-gradient(circle, rgba(251,113,63,1) 0%, rgba(227,67,4,0.8465511204481793) 0%);
+    font-size: 10px;
+    text-align: center;
+    border: 0.5px solid rgb(233,89,5);
+    border-radius: 5px;
 }
 footer{
     text-align: center;
-    background-color: black;
+    background: rgb(251,113,63);
+    background: radial-gradient(circle, rgba(251,113,63,1) 0%, rgba(227,67,4,0.8465511204481793) 0%);
 }
 #start{
    text-align: center;
     font: 1em sans-serif; 
-    background-color: black;   
+    background: rgb(251,113,63);
+    background: radial-gradient(circle, rgba(251,113,63,1) 0%, rgba(227,67,4,0.8465511204481793) 0%);  
+    border: 0.5px solid rgb(233,89,5);
+    border-radius: 5px;
 }
 #concentracion, #descansocorto, #descansoLargo, #ciclos, #start{
     width: 100%;
@@ -112,5 +143,10 @@ footer{
     margin-bottom: 5px;
 }
 
+@media (max-width: 360px){
+    .container{
+        flex-direction: column;
+    }
+}
 
 
