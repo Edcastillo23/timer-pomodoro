@@ -17,9 +17,9 @@
             <br>
             <input id="concentracion" name="momento1" type="number" required placeholder=" Ej: 25 (minutos)" />            
             <br>
-            <label for="descansocorto">Tiempo de descanso corto: </label>
+            <label for="descansoCorto">Tiempo de descanso corto: </label>
             <br>
-            <input id="descansocorto" name="momento2" type="number" required placeholder=" Ej: 5 (minutos)" />            
+            <input id="descansoCorto" name="momento2" type="number" required placeholder=" Ej: 5 (minutos)" />            
             <br>
             <label for="descansoLargo">Tiempo de descanso largo: </label> 
             <br>
@@ -31,13 +31,13 @@
             <br>
             <p id="start"> Ya puedes iniciar tu Timer 😊. </p>
           </div>
-              <section>
-                <div class="reloj">            
+              <section class="principal">
+                <div class="reloj" id="clock">            
                     <p class="minseg">00:00:00</p>
                     <div class="botones">
-                        <button class="comando1">Iniciar</button>
-                        <button class="comando2">Pausar</button>
-                        <button class="comando3">Reiniciar</button> 
+                        <button class="comando1" id="inicio">Iniciar</button>
+                        <button class="comando2" id="pausar">Pausar</button>
+                        <button class="comando3" id="reiniciar">Reiniciar</button> 
                     </div> 
                     <div class="informacion">
                         <h3>¿Quieres saber más sobre la técnica <strong>POMODORO?</strong> Haz click <a href="https://es.wikipedia.org/wiki/T%C3%A9cnica_Pomodoro" target="_blank"><strong>aquí</strong>👈</a></h3>
