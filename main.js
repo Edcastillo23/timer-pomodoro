@@ -1,114 +1,119 @@
 window.onload = () => {
-    // Pomodoro
-    let tiempoDeConcentracion;
-    let descansoCorto;
-    let cicloCompletado; // un ciclo de trabajo y descanso
-    // variables usadas en descanso largo
-    let ciclosDePomodoro;
-    let ciclosCompletados = 0; // descanso largo
+    /*Timer*/
+    let workTime;
+    let breakTime;
+    let restTime;
+    let timesCompleted;
+    let cyclesGoal; // un ciclo de trabajo y descanso
+    let cyclesCompleted = 0; // objetivo de pomodoros propuesto
 
-    function controladorDePomodoro() {
-      if (momentoDeDescansar) {
-        ciclosCompletados++;
-        if (!cumpleObjetivo()) {
-          cicloCompletado = descansoCorto;
-          temporizador();
-          tiempoDeConcentracion = 0;
+    function pomodoroController() {
+      if (isRestTime()) {
+        cyclesCompleted++;
+        if (!goalReached()) {
+          currentTime = restTime;
+          timer();
+          timesCompleted = 0;
         } else {
           console.log('Pomodoro Finalizado');
         }
         return;
       }
 
-      if (cicloCompletado % 2 == 0) {
+      if (timesCompleted % 2 == 0) {
         // Tiempo de concentracion
-        minutosMostrados = tiempoDeConcentracion;
-        cicloCompletado++; // Tiempo de concentracion
-        temporizador();
+        currentTime = workTime;
+        timesCompleted++; // Tiempo de concentracion
+        timer();
         console.log(
-          "Tiempo de concentración " + tiempoDeConcentracion
+          "Tiempo de concentración " + timesCompleted + ", ciclos " + cyclesCompleted
         );
       } else {
         /* Tiempo de descanso */
-        minutosMostrados = descansoCorto;
-        cicloCompletado++;
-        temporizador();
+        currentTime = breakTime;
+        timesCompleted++;
+        timer();
         console.log(
-          "Tiempo de decanso corto " + cicloCompletado
+          "Tiempo de decanso corto " + timesCompleted + ", ciclos " + cyclesCompleted
         );
       }
     }
 
+    function goalReached() {
+      return cyclesGoal == cyclesCompleted;
+    }
+
     // descanso largo
-    function descasoLargo() {
-      return ciclosCompletados == 7;
+    function isRestTime() {
+      return timesCompleted == 7;
     }
 
     /*Temporizador*/
-    let minutosMostrados; /* Minutos seteados */ 
-    let segundos;
+    let currentTime; /* Minutos seteados */ 
+    let seconds = 0;
 
-    function temporizador() {
-      if (minutosMostrados > 0 || segundos > 0) {
-        if (segundos == 0) {
-            segundos = 59;
-            minutosMostrados--;
+    function timer() {
+      if (currentTime > 0 || seconds > 0) {
+        if (seconds == 0) {
+            seconds = 59;
+            currentTime--;
         } else {
-            segundos--;
+            seconds--;
         }
-        actualizarReloj();
-        console.log (minutosMostrados, segundos);
-        setTimeout(temporizador, 1000);
+        updateClock();
+        console.log (currentTime, seconds);
+        setTimeout(timer, 1000);
       }  else {
-        controladorDePomodoro();
-       // console.log("El temporizador terminó");
+        pomodoroController();
+        console.log("El temporizador terminó");
       }
     }
-};
-// Fronted Contection
-let reloj = document.getElementById("clock");
-let ciclos = document.getElementById("ciclos");
-let botonInicio = document.getElementById("inicio");
-let concentracion = document.getElementById("concentracion");
-let descansoCortoElegido = document.getElementById("descansoCorto");
-let descansoLargoElegido = document.getElementByid("descansoLargo");
+
+// Frontend Connection
+    let cyclesInput = document.getElementById("ciclos");
+    let clock = document.getElementById("clock");
+    let startButton = document.getElementById("inicio");
+    let workTimeInput = document.getElementById("concentracion");
+    let breakTimeInput = document.getElementById("descansoCorto");
+    let restTimeInput = document.getElementById("descansoLargo");
 
 // Funcionalidad del boton
-botonInicio.onclick = () => {
-  variablesPopuladas();
-  iniciarPomodoro();
-};
-function iniciarPomodoro() {
+      startButton.onclick = () => {
+       populatedVariables();
+      startPomodoro();
+    };
+
+function startPomodoro() {
   console.log('Pomodoro iniciado 💪');
-  controladorDePomodoro();
+  pomodoroController();
 }
 
-function variablesPopuladas() {
+function populatedVariables() {
   console.log('Variables populadas');
-  tiempoDeConcentracion = concentracion.value; // Toma el valor que haya puesto el usuario
-  descansoCorto = descansoCortoElegido.value; // Toma el valor que haya puesto el usuario
-  descasoLargo = descansoLargoElegido.value; // Toma el valor que haya puesto el usuario
-  ciclosDePomodoro = ciclos.value; // Toma el valor que haya puesto el usuario
-  ciclosCompletados = 0;
+  workTime = workTimeInput.value; // Toma el valor que haya puesto el usuario
+  breakTime = breakTimeInput.value; // Toma el valor que haya puesto el usuario
+  restTime = restTimeInput.value; // Toma el valor que haya puesto el usuario
+  cyclesGoal = cyclesInput.value; // Toma el valor que haya puesto el usuario
+  timesCompleted = 0;
 }
 
 // El reloj
-let minutosDelReloj;
-let segundosDelReloj;
+let clockMinutes;
+let clockSeconds;
 
-function actualizarReloj() {
-  minutosDelReloj = formatoDelNumero(minutosMostrados);
-  segundosDelReloj = formatoDelNumero(segundos);
-  minseg.innerHTML = minutosDelReloj + ': ' + segundosDelReloj;
+function updateClock() {
+  clockMinutes = formatNumbers(clockMinutes);
+  clockSeconds = formatNumbers(clockSeconds);
+  clock.innerHTML = clockMinutes + ': ' + clockSeconds;
 }
 
-function formatoDelNumero(time) {
-  let formatoDelDigito;
-  if (tiempo < 10) {
-    formatoDelDigito = '0' + time;
+function formatNumbers(time) {
+  let formatteDigits;
+  if (time < 10) {
+    formatteDigits = '0' + time;
   } else {
-    formatoDelDigito = time;
+    formatteDigits = time;
   }
-  return formatoDelDigito;
+  return formatteDigits;
 }
-
+};
