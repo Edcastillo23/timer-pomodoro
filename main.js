@@ -71,7 +71,7 @@ window.onload = () => {
 
 // Frontend Connection
     let cyclesInput = document.getElementById("ciclos");
-    let clock = document.getElementById("clock");
+    let clock = document.getElementById("reloj");
     let startButton = document.getElementById("inicio");
     let workTimeInput = document.getElementById("concentracion");
     let breakTimeInput = document.getElementById("descansoCorto");
@@ -102,9 +102,9 @@ let clockMinutes;
 let clockSeconds;
 
 function updateClock() {
-  clockMinutes = formatNumbers(clockMinutes);
-  clockSeconds = formatNumbers(clockSeconds);
-  clock.innerHTML = clockMinutes + ': ' + clockSeconds;
+  clockMinutes = formatNumbers(currentTime);
+  clockSeconds = formatNumbers(seconds);
+  clock.innerHTML = clockMinutes + ':' + clockSeconds;
 }
 
 function formatNumbers(time) {
